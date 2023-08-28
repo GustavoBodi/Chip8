@@ -25,6 +25,6 @@ This is a screenshot of the emulator working:
 ## Main Resources
 Chip8 reference:
 
-[](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.4)
+[Chip8 Reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.4)
 
 
