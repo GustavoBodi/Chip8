@@ -11,17 +11,9 @@ private:
 public:
     Keyboard();
     void set(std::size_t position);
-    void set0(std::size_t position);
     A &operator[](std::size_t pos);
     void check_input();
-    void clear();
-    void show_keys();
 };
-
-template<typename A, std::size_t B>
-void Keyboard<A, B>::set0(std::size_t position) {
-    keyboard[position] = 0;
-}
 
 template<typename A, std::size_t B>
 void Keyboard<A, B>::check_input() {
@@ -49,22 +41,7 @@ A &Keyboard<A, B>::operator[](std::size_t pos) {
 }
 
 template<typename A, std::size_t B>
-void Keyboard<A, B>::show_keys() {
-    for (int i = 0; i < keyboard.size(); ++i) {
-        std::cout << "Key " << i << ": " << keyboard[i] << "|";
-        if (i % 4 == 0) {
-            std::cout << std::endl;
-        }
-    }
-}
-
-template<typename A, std::size_t B>
 Keyboard<A, B>::Keyboard() = default;
-
-template<typename A, std::size_t B>
-void Keyboard<A, B>::clear() {
-    std::fill(keyboard.begin(), keyboard.end(), 0);
-}
 
 template<typename A, std::size_t B>
 void Keyboard<A, B>::set(std::size_t position) {

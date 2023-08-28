@@ -1,4 +1,4 @@
-#include "Chip8.hpp"
+#include "../include/Chip8.hpp"
 #include <array>
 #include <iostream>
 #include <iomanip>

@@ -20,8 +20,6 @@ private:
     std::string name;
 public:
     explicit Renderer(std::string &&name, A &screen);
-    template<typename B>
-    void check_input(B keys);
     void render();
 };
 
@@ -32,36 +30,6 @@ Renderer<A>::Renderer(std::string &&name, A &screen):
         renderer{SDL_CreateRenderer(window.get(), -1, SDL_RENDERER_ACCELERATED), SDL_DestroyRenderer},
         screen(screen)
         {}
-
-template<typename A>
-template<typename B>
-void Renderer<A>::check_input(B keys) {
-    SDL_Event ev;
-    while (SDL_PollEvent(&ev)) {
-        switch (ev.type) {
-            case SDL_QUIT:
-                throw ("Exiting by Quit");
-            case SDL_KEYDOWN:
-                switch (ev.key.keysym.sym) {
-                    case SDLK_0:
-                        keys.set(0);
-                        break;
-                    case SDLK_1:
-                        keys.set(1);
-                        break;
-                    case SDLK_2:
-                        keys.set(2);
-                        break;
-                    case SDLK_3:
-                        keys.set(3);
-                        break;
-                    case SDLK_4:
-                        keys.set(4);
-                        break;
-                }
-        }
-    }
-}
 
 template<typename A>
 void Renderer<A>::render() {
