@@ -23,8 +23,7 @@ This is a screenshot of the emulator working:
 ![image info](images/bricks.png)
 
 ## Main Resources
-Chip8 reference:
 
-[Chip8 Reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.4)
+[CowGod's Chip8 Reference](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#2.4)
 
 
