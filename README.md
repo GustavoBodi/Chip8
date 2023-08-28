@@ -20,5 +20,5 @@ specifications stayed all in the Chip8 class, and the rest is statiated with the
 
 This is a screenshot of the emulator working:
 
-
+![image info](images/bricks.png)
 
