@@ -1,7 +1,3 @@
-//
-// Created by gustavo on 8/26/23.
-//
-
 #pragma once
 
 #include <memory>
@@ -37,7 +33,11 @@ void Renderer<A>::render() {
         if (screen[i]) {
             SDL_Surface *surface = SDL_GetWindowSurface(window.get());
             SDL_SetRenderDrawColor(renderer.get(), 255, 255, 255, 255);
-            const SDL_Rect rect(i % 64 * multiplier, i / 64 * multiplier, multiplier, multiplier);
+            SDL_Rect rect;
+            rect.x = i % 64 * multiplier;
+            rect.y = i / 64 * multiplier;
+            rect.h = multiplier;
+            rect.w = multiplier;
             SDL_RenderDrawRect(renderer.get(), &rect);
             SDL_RenderFillRect(renderer.get(), &rect);
         }

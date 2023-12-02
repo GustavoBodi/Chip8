@@ -20,7 +20,7 @@ std::size_t Screen<A, B>::size() {
 
 template<typename A, std::size_t B>
 void Screen<A, B>::clear() {
-    for (size_t i = 0; i < screen.size() ; ++i) {
+    for (std::size_t i = 0; i < screen.size() ; ++i) {
         screen[i] = 0;
     }
 }

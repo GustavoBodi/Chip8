@@ -78,7 +78,7 @@ public:
     explicit Chip8(Fonts &fonts);
     display_t &get_display();
     void print_internal_memory();
-    void load_file(std::string &&filename);
+    void load_file(std::string &filename);
     void fetch();
     void decode();
     void execute();

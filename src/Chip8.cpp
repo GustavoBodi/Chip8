@@ -81,7 +81,7 @@ void Chip8::print_internal_memory() {
     std::cout << std::dec;
 }
 
-void Chip8::load_file(std::string &&filename) {
+void Chip8::load_file(std::string &filename) {
     std::ifstream file(filename, std::ios::binary);
     if (file.is_open()) {
         std::copy(std::istreambuf_iterator<char>{file}, {}, memory.begin() + 512);

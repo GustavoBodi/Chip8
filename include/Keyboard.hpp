@@ -2,7 +2,8 @@
 #include <array>
 #include <cstdint>
 #include <iostream>
-#include <SDL.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_events.h>
 
 template <typename A, std::size_t B>
 class Keyboard {
@@ -32,6 +33,9 @@ void Keyboard<A, B>::check_input() {
                  };
     for (int i = 0; i < 9 ; ++i) {
         keyboard[i] = keystate[list[i]];
+    }
+    if (SDL_HasEvent(SDL_QUIT)) {
+      exit(0);
     }
 }
 

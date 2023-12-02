@@ -4,7 +4,7 @@
 
 class Fonts {
 private:
-    constexpr static auto fonts = std::to_array<uint8_t>({
+    constexpr static auto fonts = std::array<uint8_t, 80>({
             0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
             0x20, 0x60, 0x20, 0x20, 0x70, // 1
             0xF0, 0x10, 0xF0, 0x80, 0xF0, // 2
