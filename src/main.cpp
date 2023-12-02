@@ -7,7 +7,7 @@
 
 int main(int argc, char **argv) {
     if (argc != 2) {
-      std::cout << "The correct program usage is: ./chip8 <name_of_rom>" << std::endl;
+      std::cout << "The correct program usage is: ./emu <name_of_rom>" << std::endl;
     }
     std::string rom_name = argv[1];
     Fonts font {};

@@ -18,7 +18,7 @@ Chip8::Chip8(Fonts &fonts) : keyboard{std::make_unique<keyboard_t>(keyboard_t())
 void Chip8::build_table() {
     std::fill(table.begin(), table.end(), [&]() {op_invalid();});
     // Main table, highest byte
-    table[0x0] = [&]() { Chip8::Table0(); };
+    table[0x0] = [&]() { Chip8::Table0();  };
     table[0x1] = [&]() { Chip8::op_1nnn(); };
     table[0x2] = [&]() { Chip8::op_2nnn(); };
     table[0x3] = [&]() { Chip8::op_3xkk(); };
@@ -26,14 +26,14 @@ void Chip8::build_table() {
     table[0x5] = [&]() { Chip8::op_5xy0(); };
     table[0x6] = [&]() { Chip8::op_6xkk(); };
     table[0x7] = [&]() { Chip8::op_7xkk(); };
-    table[0x8] = [&]() { Chip8::Table8(); };
+    table[0x8] = [&]() { Chip8::Table8();  };
     table[0x9] = [&]() { Chip8::op_9xy0(); };
     table[0xA] = [&]() { Chip8::op_Annn(); };
     table[0xB] = [&]() { Chip8::op_Bnnn(); };
     table[0xC] = [&]() { Chip8::op_Cxkk(); };
     table[0xD] = [&]() { Chip8::op_Dxyn(); };
-    table[0xE] = [&]() { Chip8::TableE(); };
-    table[0xF] = [&]() { Chip8::TableF(); };
+    table[0xE] = [&]() { Chip8::TableE();  };
+    table[0xF] = [&]() { Chip8::TableF();  };
 
     std::fill(table0.begin(), table0.end(), [&]() {op_invalid();});
     // Table 0, lowest nibble
