@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <fstream>
 #include <memory>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 
 Chip8::Chip8(Fonts &fonts) : keyboard{std::make_unique<keyboard_t>(keyboard_t())},

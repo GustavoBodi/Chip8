@@ -30,15 +30,17 @@ private:
     static constexpr std::size_t height = 32;
     // Display size is 64 x 32
     static constexpr std::size_t display_pixels = width * height;
-    // Represents the screen type of representation
-    using display_t = Screen<uint8_t, display_pixels>;
     // Represents the instruction type
     using instruction_t = uint16_t;
     // Types that represent the internal keyboard positions
     using keyboard_num_t = uint8_t;
     // The Keyboard Type from template parameters itself
     using keyboard_t = Keyboard<keyboard_num_t, keyboard_size>;
+public:
+    // Represents the screen type of representation
+    using display_t = Screen<uint8_t, display_pixels>;
 
+private:
     std::string name;
     // Memory has 4096 bytes
     std::array<uint8_t, memory_size> memory { 0 };

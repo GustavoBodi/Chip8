@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
     Fonts font {};
     Chip8 chip = Chip8(font);
     chip.load_file(rom_name);
-    Renderer renderer ("My screen", chip.get_display());
+    Renderer<Chip8::display_t> renderer ("My screen", chip.get_display());
 
     while(true) {
         try {
