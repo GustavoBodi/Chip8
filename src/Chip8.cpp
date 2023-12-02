@@ -365,5 +365,8 @@ int Chip8::check_input() {
             return i;
         }
     }
-    return -1;
+    if (!(keyboard->check_input())) {
+      return -1;
+    }
+    return 0;
 }

@@ -13,11 +13,11 @@ public:
     Keyboard();
     void set(std::size_t position);
     A &operator[](std::size_t pos);
-    void check_input();
+    int check_input();
 };
 
 template<typename A, std::size_t B>
-void Keyboard<A, B>::check_input() {
+int Keyboard<A, B>::check_input() {
     SDL_PumpEvents();
     auto keystate = SDL_GetKeyboardState(nullptr);
     uint8_t list[] = {SDL_SCANCODE_0,
@@ -35,8 +35,9 @@ void Keyboard<A, B>::check_input() {
         keyboard[i] = keystate[list[i]];
     }
     if (SDL_HasEvent(SDL_QUIT)) {
-      exit(0);
+      return -1;
     }
+    return 0;
 }
 
 template<typename A, std::size_t B>

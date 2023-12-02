@@ -17,7 +17,9 @@ int main(int argc, char **argv) {
 
     while(true) {
         try {
-            chip.check_input();
+            if (!chip.check_input()) {
+              break;
+            }
 
             chip.fetch();
 
